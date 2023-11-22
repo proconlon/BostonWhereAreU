@@ -30,16 +30,17 @@ public class HomeFragment extends Fragment {
         final TextView textView = binding.textHome;
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
-        // Correctly reference the button
-        Button button = binding.MAPSButton;
+        // Button to navigate to MapsFragment
+        Button button = binding.MAPSButton; // Ensure this ID matches your button ID in fragment_home.xml
         button.setOnClickListener(v -> navigateToMapsFragment());
 
         return root;
     }
 
     private void navigateToMapsFragment() {
+        // Ensure this action ID matches the one defined in your nav_graph.xml
         NavHostFragment.findNavController(this)
-                .navigate(R.id.action_navigation_home_to_mapsFragment);
+                .navigate(R.id.action_navigation_home_to_map_viewer);
     }
 
     @Override
