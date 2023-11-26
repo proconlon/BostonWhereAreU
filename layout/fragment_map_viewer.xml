@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".map_viewer">
+
+    <!-- TouchImageView for displaying the image -->
+    <com.ortiz.touchview.TouchImageView
+        android:id="@+id/img_map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/campus_map_temporary" />
+
+    <!-- TextView to display touch coordinates -->
+    <TextView
+        android:id="@+id/coordinates_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:background="#50FFFFFF"
+        android:padding="8dp"
+        android:textColor="#FF0000"
+        android:textSize="18sp" />
+
+</FrameLayout>
