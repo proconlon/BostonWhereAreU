@@ -34,9 +34,16 @@ public class HomeFragment extends Fragment {
         Button button = binding.MAPSButton; // Ensure this ID matches your button ID in fragment_home.xml
         button.setOnClickListener(v -> navigateToMapsFragment());
 
+        Button button1 = binding.randImg;
+        button1.setOnClickListener(v->navigateToRandImg());
         return root;
     }
 
+    private void navigateToRandImg() {
+        // Ensure this action ID matches the one defined in your nav_graph.xml
+        NavHostFragment.findNavController(this)
+                .navigate(R.id.action_navigation_home_to_rand_img);
+    }
     private void navigateToMapsFragment() {
         // Ensure this action ID matches the one defined in your nav_graph.xml
         NavHostFragment.findNavController(this)
