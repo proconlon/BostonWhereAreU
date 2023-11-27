@@ -7,6 +7,8 @@
     tools:context=".map_viewer">
 
     <!-- TouchImageView for displaying the image -->
+
+    <!-- TextView to display touch coordinates for debugging -->
     <com.ortiz.touchview.TouchImageView
         android:id="@+id/img_map"
         android:layout_width="match_parent"
@@ -14,7 +16,6 @@
         android:scaleType="centerCrop"
         android:src="@drawable/campus_map_temporary" />
 
-    <!-- TextView to display touch coordinates -->
     <TextView
         android:id="@+id/coordinates_text_view"
         android:layout_width="wrap_content"
@@ -24,5 +25,21 @@
         android:padding="8dp"
         android:textColor="#FF0000"
         android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/map_marker"
+        android:layout_width="103dp"
+        android:layout_height="67dp"
+        android:src="@drawable/map_marker" />
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="238dp"
+        android:layout_height="139dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:text="Confirm"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
 
 </FrameLayout>
