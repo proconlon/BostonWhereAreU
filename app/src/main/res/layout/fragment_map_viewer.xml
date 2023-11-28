@@ -26,20 +26,27 @@
         android:textColor="#FF0000"
         android:textSize="18sp" />
 
-    <ImageView
-        android:id="@+id/map_marker"
-        android:layout_width="103dp"
-        android:layout_height="67dp"
-        android:src="@drawable/map_marker" />
-
+    <!-- Confirm button -->
     <Button
         android:id="@+id/btn_confirm"
         android:layout_width="238dp"
-        android:layout_height="139dp"
+        android:layout_height="80dp"
         android:layout_gravity="bottom|center_horizontal"
         android:text="Confirm"
         android:visibility="invisible"
         tools:visibility="visible" />
 
+    <!-- Map overlay for circle and line -->
+    <com.example.bostonwhereareu.MapOverlay
+        android:id="@+id/map_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Map Marker -->
+    <ImageView
+        android:id="@+id/map_marker"
+        android:layout_width="103dp"
+        android:layout_height="67dp"
+        android:src="@drawable/map_marker" />
 
 </FrameLayout>
