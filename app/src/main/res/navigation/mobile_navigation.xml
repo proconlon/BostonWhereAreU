@@ -46,5 +46,9 @@
         android:id="@+id/rand_img"
         android:name="com.example.bostonwhereareu.RandomImage"
         android:label="random_img"
-        tools:layout="@layout/random_img" />
+        tools:layout="@layout/random_img" >
+        <action
+            android:id="@+id/action_rand_img_to_map_viewer"
+            app:destination="@id/map_viewer" />
+    </fragment>
 </navigation>

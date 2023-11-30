@@ -9,25 +9,40 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="0dp"
+        android:layout_width="372dp"
         android:layout_height="0dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="220dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="80dp"
-        app:layout_constraintBottom_toTopOf="@+id/rand_button"
+
+        android:layout_marginTop="76dp"
+        android:layout_marginBottom="168dp"
+        app:layout_constraintBottom_toTopOf="@+id/count_time"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/rand_button"
+        android:id="@+id/action_rand_img_to_map_viewer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="175dp"
-        android:text="Next Image"
+        android:layout_marginBottom="180dp"
+        android:text="Guess Location"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/count_time"
+        android:layout_width="38dp"
+        android:layout_height="42dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="75dp"
+        android:text="10"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
