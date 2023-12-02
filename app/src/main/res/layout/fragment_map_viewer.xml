@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".map_viewer">
+    android:layout_height="match_parent">
 
     <!-- TouchImageView for displaying the image -->
 
@@ -48,5 +47,33 @@
         android:layout_width="103dp"
         android:layout_height="67dp"
         android:src="@drawable/map_marker" />
+
+    <!-- container for next and info buttons -->
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="238dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        tools:visibility="visible">
+
+        <!-- Next button -->
+        <Button
+            android:id="@+id/buttonNext"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Next" />
+
+        <!-- Show more info about location button -->
+        <Button
+            android:id="@+id/buttonMoreInfo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="More Info" />
+    </LinearLayout>
+
 
 </FrameLayout>

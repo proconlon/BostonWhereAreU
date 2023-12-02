@@ -9,10 +9,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.ortiz.touchview.TouchImageView;
 import com.example.bostonwhereareu.MapOverlay;
@@ -22,7 +29,7 @@ public class MapViewerFragment extends Fragment {
     private ImageView mapMarker; // map marker image view
     private TouchImageView touchImageView; // TouchImageView type for the map
     private MapOverlay mapOverlay; // for drawing lines and circles after press confirm
-    private Button confirmButton; // Button to confirm the marker placement
+    private Button confirmButton, buttonNext, buttonMoreInfo; // Buttons
     private float initialTouchX, initialTouchY; // tracker for initial touch coordinates
     private final float MOVE_THRESHOLD = 10; // movement threshold in pixels, 10 seems to work good
     private final int rawImageWidth = 3175; // in pixels
@@ -41,9 +48,9 @@ public class MapViewerFragment extends Fragment {
         return new MapViewerFragment();
     }
 
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_map_viewer, container, false);
     }
 
@@ -58,6 +65,13 @@ public class MapViewerFragment extends Fragment {
 
         mapMarker = view.findViewById(R.id.map_marker); // Initialize ImageView for the marker
         mapMarker.setVisibility(View.INVISIBLE);
+
+        // Retrieve current location's coordinates from GameState
+        LocationData currentLocation = GameState.getInstance().getCurrentLocation();
+        if (currentLocation != null) {
+            targetX = currentLocation.getX();
+            targetY = currentLocation.getY();
+        }
 
         // map and marker listener
         touchImageView.setOnTouchListener((v, event) -> {
@@ -82,6 +96,16 @@ public class MapViewerFragment extends Fragment {
 
 
         confirmButton = view.findViewById(R.id.btn_confirm); // Initialize Confirm Button (starts as invisible)
+
+        // more buttons!!
+        buttonNext = view.findViewById(R.id.buttonNext);
+        buttonMoreInfo = view.findViewById(R.id.buttonMoreInfo);
+
+        // Set click listeners for Next and More Info Buttons
+        buttonNext.setOnClickListener(v -> proceedToNextRound());
+        buttonMoreInfo.setOnClickListener(v -> showMoreInfo());
+
+
         mapOverlay = view.findViewById(R.id.map_overlay);
 
         // confirm button listener
@@ -95,13 +119,42 @@ public class MapViewerFragment extends Fragment {
 
             // Hide confirm button and disable touch on the TouchImageView
             confirmButton.setVisibility(View.INVISIBLE);
-            touchImageView.setOnTouchListener((v1, event1) -> false); // Disable touch interaction
-            //touchImageView.setZoom(1.0f); // Reset zoom to 1.0 (original scale)
+            touchImageView.setOnTouchListener((v1, event1) -> false); // Disable touch interaction - FIX THIS LATER
 
-            // calculate score and display it
-            mapOverlay.calculateScore();
+            //show option buttons
+            nextAndInfoButtonVisible();
+
+            // initialize game state
+            GameState gameState = GameState.getInstance();
+            // add score to total score
+            gameState.addScore(mapOverlay.calculateScore());
+
+            // increment round if game is not over
+            if (!gameState.isGameOver()) {
+                gameState.incrementRound();
+            }
+            else {
+                // navigate to a game over screen
+
+            }
+
         });
+
     }
+
+    // Action Bar title
+    @Override
+    public void onResume() {
+        super.onResume();
+        ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle("Where are U?");
+        }
+    }
+
+
+
 
     // This calculates both the raw image coordinates and the coordinates that the marker displays
     private void calculateCoordinates(MotionEvent event) {
@@ -172,4 +225,41 @@ public class MapViewerFragment extends Fragment {
 
         return imageMatrixCoords;
     }
+
+    private void proceedToNextRound() {
+        GameState gameState = GameState.getInstance();
+
+        if (!gameState.isGameOver()) {
+            // Use NavController to navigate
+            NavHostFragment.findNavController(this)
+                    .navigate(R.id.action_mapViewerFragment_to_randomImageFragment);
+        } else {
+            // Navigate to game over screen
+            NavHostFragment.findNavController(this)
+                    .navigate(R.id.action_mapViewerFragment_to_gameOverFragment);
+        }
+    }
+
+    // Navigate to RandomImage fragment
+    private void navigateToRandomImage() {
+        FragmentManager fragmentManager = getParentFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.container, new RandomImage());
+        transaction.addToBackStack(null); // To enable back navigation
+        transaction.commit();
+    }
+
+    private void showMoreInfo() {
+        // Navigate to LocationInfoFragment
+        NavHostFragment.findNavController(this)
+                .navigate(R.id.action_mapViewerFragment_to_locationInfoFragment);
+    }
+
+    public void nextAndInfoButtonVisible() {
+        LinearLayout buttonLayout = getView().findViewById(R.id.buttonLayout);
+        buttonLayout.setVisibility(View.VISIBLE);
+    }
+
+
+
 }

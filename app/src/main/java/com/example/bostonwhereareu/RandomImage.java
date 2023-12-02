@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.fragment.NavHostFragment;
 
 import java.util.Random;
 
@@ -49,16 +50,24 @@ public class RandomImage extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.random_img, container, false);
 
-
-
-        imageView3 = view.findViewById(R.id.imageView3);
-        rand = new Random();
         to_map_viewer = view.findViewById(R.id.action_rand_img_to_map_viewer);
 
+        // Set up the image view
+        imageView3 = view.findViewById(R.id.imageView3);
 
+        // Get the current location from GameState class
+        GameState gameState = GameState.getInstance();
+        gameState.startRound();
+        LocationData currentLocation = gameState.getCurrentLocation();
 
-        imageView3.setImageResource(images[rand.nextInt(images.length)]);
+        // Determine the image resource based on the location name
+        if (currentLocation != null) {
+            String locationName = currentLocation.getPlaceName();
+            int imageResource = getImage(locationName);
+            imageView3.setImageResource(imageResource);
+        }
 
+        /*
         //Create Timer
         countTime = view.findViewById(R.id.count_time);
         countDown = new CountDownTimer(10000, 1000) {
@@ -77,23 +86,45 @@ public class RandomImage extends Fragment {
                 ft.commit();
             }//Go to guess screen when time is up
         }.start();
-
+        */
 
         to_map_viewer.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
-                //imageView3.setImageResource(images[rand.nextInt(images.length)]);
-                FragmentManager fragMan = requireActivity().getSupportFragmentManager();
-                FragmentTransaction ft = fragMan.beginTransaction();
-                ft.setReorderingAllowed(true);
-                ft.replace(R.id.nav_host_fragment_activity_main, new MapViewerFragment());
-                ft.commit();
-            }//goes to guess screen
-
+                NavHostFragment.findNavController(RandomImage.this)
+                        .navigate(R.id.action_rand_img_to_map_viewer);
+            }
         });
-
         return view;
+    }
+
+    private int getImage(String locationName) {
+        switch (locationName) {
+            case "CAS":
+                return R.drawable.cas;
+            case "CDS":
+                return R.drawable.cds;
+            case "Fenway Park":
+                return R.drawable.fenwaypark;
+            case "GSU":
+                return R.drawable.gsu;
+            case "Kenmore":
+                return R.drawable.kenmore;
+            case "Marciano":
+                return R.drawable.marciano;
+            case "Marsh Chapel":
+                return R.drawable.marshchapel;
+            case "Myles":
+                return R.drawable.myles;
+            case "Questrom":
+                return R.drawable.questrom;
+            case "Warren":
+                return R.drawable.warren;
+            case "West Campus":
+                return R.drawable.westcampus;
+            default: // Should never happen
+                return R.drawable.cas;
+        }
     }
 
 }

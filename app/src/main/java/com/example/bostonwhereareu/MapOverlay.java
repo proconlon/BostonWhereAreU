@@ -15,7 +15,7 @@ public class MapOverlay extends View {
     // viewer locations of marker and target (for line drawing)
     private float viewMarkerX, viewMarkerY;
     private float viewTargetX, viewTargetY;
-    protected float score;
+    private float score;
 
     // code constructor
     public MapOverlay(Context context) {
@@ -41,9 +41,9 @@ public class MapOverlay extends View {
 
         // defined r<15 as max score (1000)
         // defined r>500 as min score (0)
-        if (distance <= 15) {
+        if (distance <= 40) {
             return 1000;
-        } else if (distance > 500) {
+        } else if (distance > 6000) {
             return 0;
         } else {
             // Decrease score as distance increases
@@ -81,7 +81,8 @@ public class MapOverlay extends View {
             paint.setTextSize(50f);
             canvas.drawText("Score: " + score, 50f, 50f, paint);
 
-            // draw anything else like continue button
+            // display distance
+
         }
     }
 }
