@@ -25,12 +25,12 @@ public class MapViewerFragment extends Fragment {
     private Button confirmButton; // Button to confirm the marker placement
     private float initialTouchX, initialTouchY; // tracker for initial touch coordinates
     private final float MOVE_THRESHOLD = 10; // movement threshold in pixels, 10 seems to work good
-    private final int rawImageWidth = 760; // in pixels
-    private final int rawImageHeight = 400; // in pixels
+    private final int rawImageWidth = 3175; // in pixels
+    private final int rawImageHeight = 2000; // in pixels
 
     // Target coordinates (in raw image pixels)
-    protected static int targetX = 100; // MODIFY TO NEW TARGET X COORDINATE
-    protected static int targetY = 100; // MODIFY TO NEW TARGET Y COORDINATE
+    protected static int targetX = 1000; // MODIFY TO NEW TARGET X COORDINATE
+    protected static int targetY = 1000; // MODIFY TO NEW TARGET Y COORDINATE
     protected static float rawX, rawY; // raw pixel coordinates of the marker
 
     public MapViewerFragment() {
@@ -51,8 +51,8 @@ public class MapViewerFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        touchImageView = view.findViewById(R.id.img_map); // Initialize TouchImageView for map // MODIFY TO NEW TOUCH IMAGE VIEW
-        touchImageView.setImageResource(R.drawable.campus_map_temporary); // MODIFY TO NEW CAMPUS MAP
+        touchImageView = view.findViewById(R.id.img_map); // Initialize TouchImageView for map
+        touchImageView.setImageResource(R.drawable.campus_map);
 
         coordinatesTextView = view.findViewById(R.id.coordinates_text_view); // Initialize TextView for coordinates
 

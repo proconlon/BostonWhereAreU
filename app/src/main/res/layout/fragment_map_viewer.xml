@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/campus_map_temporary" />
+        android:src="@drawable/campus_map" />
 
     <TextView
         android:id="@+id/coordinates_text_view"
