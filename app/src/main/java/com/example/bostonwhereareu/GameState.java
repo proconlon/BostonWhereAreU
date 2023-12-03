@@ -38,7 +38,7 @@ public class GameState {
         if (currentRound < ROUNDS) {
             // Ensure the round number is within the bounds of the location list
             currentLocation = locationList.get(currentRound);
-            visitedLocations.add(currentLocation.getPlaceName());
+            //visitedLocations.add(currentLocation.getPlaceName());
         } else {
             // Handle the case where all rounds are complete
             currentLocation = null; // or set it to a default LocationData object
@@ -55,6 +55,7 @@ public class GameState {
 
     public void incrementRound() {
         currentRound++;
+        visitedLocations.add(currentLocation.getPlaceName());
     }
 
     public void addScore(int roundScore) {

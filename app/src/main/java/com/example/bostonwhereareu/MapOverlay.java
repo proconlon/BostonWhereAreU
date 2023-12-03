@@ -10,7 +10,7 @@ import android.view.View;
 
 public class MapOverlay extends View {
     private Paint paint; // paint object for drawing lines and circles
-    private boolean isMarkerConfirmed = false;
+    public boolean isMarkerConfirmed = false;
 
     // viewer locations of marker and target (for line drawing)
     private float viewMarkerX, viewMarkerY;
@@ -72,7 +72,7 @@ public class MapOverlay extends View {
         super.onDraw(canvas);
         if (isMarkerConfirmed) {
             // Draw a circle around the marker
-            canvas.drawCircle(viewMarkerX, viewMarkerY, 20f, paint);
+            canvas.drawCircle(viewTargetX, viewTargetY, 15, paint);
 
             // Draw a line to the target point
             canvas.drawLine(viewMarkerX, viewMarkerY, viewTargetX, viewTargetY, paint);
@@ -81,8 +81,9 @@ public class MapOverlay extends View {
             paint.setTextSize(50f);
             canvas.drawText("Score: " + score, 50f, 50f, paint);
 
-            // display distance
+            // display distance in feet or other things
 
         }
     }
+
 }
