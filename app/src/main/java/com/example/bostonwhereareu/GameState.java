@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class GameState {
     private static final GameState instance = new GameState();
-    private static final int ROUNDS = 5+2; // number of rounds in a game
+    private static final int ROUNDS = 5; // number of rounds in a game
     private int currentRound = 0;
     private int totalScore = 0;
 
@@ -39,7 +39,6 @@ public class GameState {
             // Ensure the round number is within the bounds of the location list
             currentLocation = locationList.get(currentRound);
             visitedLocations.add(currentLocation.getPlaceName());
-            currentRound++; // Increment the round number for the next call
         } else {
             // Handle the case where all rounds are complete
             currentLocation = null; // or set it to a default LocationData object
@@ -80,13 +79,16 @@ public class GameState {
 
     // returns true if game is over
     public boolean isGameOver() {
-        return currentRound > ROUNDS;
+        return currentRound > ROUNDS-1;
     }
 
     // Reset game state for a new game
     public void resetGame() {
-        currentRound = 1;
+        currentRound = 0;
         totalScore = 0;
         visitedLocations.clear(); // Clear the arraylist
+        Collections.shuffle(locationList, new Random());
+
+
     }
 }

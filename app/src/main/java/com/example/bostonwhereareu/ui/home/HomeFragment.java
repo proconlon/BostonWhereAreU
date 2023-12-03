@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
@@ -37,6 +39,14 @@ public class HomeFragment extends Fragment {
         Button button1 = binding.randImg;
         button1.setOnClickListener(v->navigateToRandImg());
         return root;
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.hide(); // Hide the action bar
+        }
     }
 
     private void navigateToRandImg() {

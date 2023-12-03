@@ -30,4 +30,13 @@
         android:layout_marginTop="60dp"
         android:text="West Campus is an area in the westernmost part of Boston University's Charles River campus in Boston, Massachusetts. West Campus has three high-rises, each housing well over 600 residents. They are named Claflin, Sleeper and Rich Halls after the three founders of Boston University."
         android:textSize="16sp"/>
+
+    <Button
+        android:id="@+id/btn_leave"
+        android:layout_width="238dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:text="Back to Map"
+        android:visibility="visible" />
 </FrameLayout>

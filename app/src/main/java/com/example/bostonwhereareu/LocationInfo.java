@@ -4,14 +4,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import androidx.fragment.app.DialogFragment;
 
 import androidx.fragment.app.Fragment;
 
-    public class LocationInfo extends Fragment {
+    public class LocationInfo extends DialogFragment {
 
         // the fragment goes to one of the xml files for a location.
         // the xml files are in app/src/main/res/layout called location_XXXX.xml
-
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -24,7 +26,17 @@ import androidx.fragment.app.Fragment;
             // based on the name of the current location, go to the corresponding xml file with a case statement
             int layoutResId = getLayoutResId(currentLocation);
 
-            return inflater.inflate(layoutResId, container, false);
+            View view = inflater.inflate(layoutResId, container, false);
+
+            Button leaveButton = view.findViewById(R.id.btn_leave);
+            leaveButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dismiss(); // Dismiss the dialog
+                }
+            });
+
+            return view;
         }
 
         private int getLayoutResId(String locationName) {

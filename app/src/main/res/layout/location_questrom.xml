@@ -30,4 +30,13 @@
         android:layout_marginTop="60dp"
         android:text="The Questrom School of Business is the business school of Boston University. Founded in 1913 and formerly known as the School of Management, the school received its current name in 2015."
         android:textSize="16sp"/>
+
+    <Button
+        android:id="@+id/btn_leave"
+        android:layout_width="238dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:text="Back to Map"
+        android:visibility="visible" />
 </FrameLayout>

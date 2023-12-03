@@ -30,4 +30,13 @@
         android:layout_marginTop="60dp"
         android:text="Rising above Central Campus, the 19-story structure houses the departments of mathematics &amp; statistics and computer science, the newly created Faculty for Computing and Data Sciences, as well as the renowned Rafik B. Hariri Institute for Computing and Computational Science &amp; Engineering."
         android:textSize="16sp"/>
+
+    <Button
+        android:id="@+id/btn_leave"
+        android:layout_width="238dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:text="Back to Map"
+        android:visibility="visible" />
 </FrameLayout>

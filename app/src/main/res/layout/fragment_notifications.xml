@@ -19,4 +19,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/btn_reset_game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="reset game"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

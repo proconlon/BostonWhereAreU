@@ -30,4 +30,13 @@
         android:layout_marginTop="60dp"
         android:text="The Marciano Commons is one of three main dining halls on BU campus. The building is also home to the Center for Student Services. The facilities include a bakery and late night cafe in the basement, and a dozen food stations on the first and second floors, along with 920 seats."
         android:textSize="16sp"/>
+
+    <Button
+        android:id="@+id/btn_leave"
+        android:layout_width="238dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:text="Back to Map"
+        android:visibility="visible" />
 </FrameLayout>

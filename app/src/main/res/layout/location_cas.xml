@@ -30,4 +30,13 @@
         android:layout_marginTop="60dp"
         android:text="The College of Arts &amp; Sciences (CAS) and the Graduate School of Arts &amp; Sciences together form Boston University's largest and most central teaching and research enterprise, providing instruction in the liberal arts for all BU students."
         android:textSize="16sp"/>
+
+    <Button
+        android:id="@+id/btn_leave"
+        android:layout_width="238dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:text="Back to Map"
+        android:visibility="visible" />
 </FrameLayout>

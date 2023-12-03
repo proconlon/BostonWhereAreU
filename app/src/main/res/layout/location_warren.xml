@@ -29,4 +29,13 @@
         android:layout_marginTop="60dp"
         android:text="Warren Towers is one of the three Boston University dormitories traditionally intended for underclassmen, the others being The Towers and West Campus. The building is located at central campus, next to the College of Communication (COM) and across from the College of Arts and Sciences (CAS). Housing approximately 1800 students, it is the second-largest non-military dormitory in the country."
         android:textSize="16sp"/>
+
+    <Button
+        android:id="@+id/btn_leave"
+        android:layout_width="238dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:text="Back to Map"
+        android:visibility="visible" />
 </FrameLayout>

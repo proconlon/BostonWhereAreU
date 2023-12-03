@@ -251,8 +251,8 @@ public class MapViewerFragment extends Fragment {
 
     private void showMoreInfo() {
         // Navigate to LocationInfoFragment
-        NavHostFragment.findNavController(this)
-                .navigate(R.id.action_mapViewerFragment_to_locationInfoFragment);
+        LocationInfo locationInfoFragment = new LocationInfo();
+        locationInfoFragment.show(getParentFragmentManager(), "locationInfo");
     }
 
     public void nextAndInfoButtonVisible() {
