@@ -66,6 +66,8 @@ public class MapViewerFragment extends Fragment {
         mapMarker = view.findViewById(R.id.map_marker); // Initialize ImageView for the marker
         mapMarker.setVisibility(View.INVISIBLE);
 
+        RandomImage.countDown.cancel();
+
         // Retrieve current location's coordinates from GameState
         LocationData currentLocation = GameState.getInstance().getCurrentLocation();
         if (currentLocation != null) {

@@ -22,7 +22,7 @@ public class RandomImage extends Fragment {
     TextView countTime;
     private static final long Start_Time = 10000;
     private long time_left = Start_Time;
-    CountDownTimer countDown;
+    static CountDownTimer countDown;
     private boolean is_running;
     ImageView imageView3;
     Button to_map_viewer;
@@ -67,7 +67,7 @@ public class RandomImage extends Fragment {
             imageView3.setImageResource(imageResource);
         }
 
-        /*
+
         //Create Timer
         countTime = view.findViewById(R.id.count_time);
         countDown = new CountDownTimer(10000, 1000) {
@@ -79,14 +79,17 @@ public class RandomImage extends Fragment {
 
             @Override
             public void onFinish() {
-                FragmentManager fragMan = requireActivity().getSupportFragmentManager();
+               /* FragmentManager fragMan = requireActivity().getSupportFragmentManager();
                 FragmentTransaction ft = fragMan.beginTransaction();
                 ft.setReorderingAllowed(true);
                 ft.replace(R.id.nav_host_fragment_activity_main, new MapViewerFragment());
                 ft.commit();
+                */
+                NavHostFragment.findNavController(RandomImage.this)
+                        .navigate(R.id.action_rand_img_to_map_viewer);
             }//Go to guess screen when time is up
         }.start();
-        */
+
 
         to_map_viewer.setOnClickListener(new View.OnClickListener() {
             @Override
