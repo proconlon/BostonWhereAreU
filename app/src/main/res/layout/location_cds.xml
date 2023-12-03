@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|top"
-        android:text="Center for Computing & Data Sciences"
+        android:text="Center for Computing &amp; Data Sciences"
         android:textSize="20sp"
         android:textStyle="bold"
         android:paddingTop="16dp"/>
@@ -28,6 +28,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="60dp"
-        android:text="Rising above Central Campus, the 19-story structure houses the departments of mathematics & statistics and computer science, the newly created Faculty for Computing and Data Sciences, as well as the renowned Rafik B. Hariri Institute for Computing and Computational Science & Engineering."
+        android:text="Rising above Central Campus, the 19-story structure houses the departments of mathematics &amp; statistics and computer science, the newly created Faculty for Computing and Data Sciences, as well as the renowned Rafik B. Hariri Institute for Computing and Computational Science &amp; Engineering."
         android:textSize="16sp"/>
 </FrameLayout>

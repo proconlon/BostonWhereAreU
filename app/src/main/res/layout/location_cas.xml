@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|top"
-        android:text="College of Arts & Sciences"
+        android:text="College of Arts &amp; Sciences"
         android:textSize="20sp"
         android:textStyle="bold"
         android:paddingTop="16dp"/>
@@ -28,6 +28,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="60dp"
-        android:text="The College of Arts & Sciences (CAS) and the Graduate School of Arts & Sciences together form Boston University's largest and most central teaching and research enterprise, providing instruction in the liberal arts for all BU students."
+        android:text="The College of Arts &amp; Sciences (CAS) and the Graduate School of Arts &amp; Sciences together form Boston University's largest and most central teaching and research enterprise, providing instruction in the liberal arts for all BU students."
         android:textSize="16sp"/>
 </FrameLayout>
