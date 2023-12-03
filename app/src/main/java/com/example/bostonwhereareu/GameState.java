@@ -20,17 +20,17 @@ public class GameState {
 
     // constructor
     private GameState() {
-        locationList.add(new LocationData(0, 0, "CAS"));
-        locationList.add(new LocationData(0, 0, "CDS"));
-        locationList.add(new LocationData(2238, 1361, "Fenway Park"));
-        locationList.add(new LocationData(0, 0, "GSU"));
-        locationList.add(new LocationData(0, 0, "Kenmore"));
-        locationList.add(new LocationData(0, 0, "Marciano"));
-        locationList.add(new LocationData(0, 0, "Marsh Chapel"));
-        locationList.add(new LocationData(0, 0, "Myles"));
-        locationList.add(new LocationData(0, 0, "Questrom"));
-        locationList.add(new LocationData(0, 0, "Warren"));
-        locationList.add(new LocationData(0, 0, "West Campus"));
+        locationList.add(new LocationData(1684, 981, "CAS"));
+        locationList.add(new LocationData(1812, 1015, "CDS"));
+        locationList.add(new LocationData(2235, 1352, "Fenway Park"));
+        locationList.add(new LocationData(1387, 929, "GSU"));
+        locationList.add(new LocationData(2341, 1111, "Kenmore"));
+        locationList.add(new LocationData(2190, 1017, "Marciano"));
+        locationList.add(new LocationData(1570, 954, "Marsh Chapel"));
+        locationList.add(new LocationData(2432, 1035, "Myles"));
+        locationList.add(new LocationData(2051, 1044, "Questrom"));
+        locationList.add(new LocationData(1748, 1077, "Warren"));
+        locationList.add(new LocationData(757, 868, "West Campus"));
 
         Collections.shuffle(locationList, new Random());
     }
