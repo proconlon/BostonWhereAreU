@@ -2,21 +2,32 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:padding="16dp">
 
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:text="Marsh Chapel"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingTop="16dp"/>
+
     <ImageView
-        android:id="@+id/imageViewKenmore"
+        android:id="@+id/casImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/marshchapel" /> <!-- Reference to kenmore.jpg -->
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/marshchapel" />
 
-    <Button
-        android:id="@+id/buttonNavigate"
+    <TextView
+        android:id="@+id/descriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal|bottom"
-        android:text="Guess the location"
-        android:layout_marginBottom="20dp"/>
-
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:text="Marsh Chapel is a building on the campus of Boston University used as the official place of worship of the school. It was named for Daniel L. Marsh, a former president of BU and a Methodist minister."
+        android:textSize="16sp"/>
 </FrameLayout>
