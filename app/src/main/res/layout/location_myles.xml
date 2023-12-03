@@ -2,22 +2,32 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:padding="16dp">
 
-    <ImageView
-        android:id="@+id/imageViewKenmore"
+    <TextView
+        android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="center_horizontal|top"
+        android:text="Myles Standish Hall"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingTop="16dp"/>
+
+    <ImageView
+        android:id="@+id/casImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
         android:src="@drawable/myles" />
 
-    <Button
-        android:id="@+id/buttonNavigate"
+    <TextView
+        android:id="@+id/descriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal|bottom"
-        android:text="Guess the location"
-        android:layout_marginBottom="20dp"/>
-
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:text="Myles Standish Hall is a suite-style Boston University dormitory located in Kenmore Square. Originally constructed in 1925 and opened as the Myles Standish Hotel, it was deemed to be one of the finest hotels in the world. In 1949, BU acquired the building and converted it into a dormitory. In 2018, BU completed a comprehensive two-year renovation, completely rebuilding the interior of the building."
+        android:textSize="16sp"/>
 </FrameLayout>

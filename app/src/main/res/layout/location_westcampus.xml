@@ -2,22 +2,32 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:padding="16dp">
 
-    <ImageView
-        android:id="@+id/imageViewKenmore"
+    <TextView
+        android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="center_horizontal|top"
+        android:text="West Campus"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingTop="16dp"/>
+
+    <ImageView
+        android:id="@+id/casImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
         android:src="@drawable/westcampus" />
 
-    <Button
-        android:id="@+id/buttonNavigate"
+    <TextView
+        android:id="@+id/descriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal|bottom"
-        android:text="Guess the location"
-        android:layout_marginBottom="20dp"/>
-
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:text="West Campus is an area in the westernmost part of Boston University's Charles River campus in Boston, Massachusetts. West Campus has three high-rises, each housing well over 600 residents. They are named Claflin, Sleeper and Rich Halls after the three founders of Boston University."
+        android:textSize="16sp"/>
 </FrameLayout>

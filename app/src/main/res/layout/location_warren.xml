@@ -2,22 +2,31 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:padding="16dp">
 
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:text="Warren Towers"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingTop="16dp"/>
+
     <ImageView
-        android:id="@+id/imageViewKenmore"
+        android:id="@+id/casImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:src="@drawable/warren" />
 
-    <Button
-        android:id="@+id/buttonNavigate"
+    <TextView
+        android:id="@+id/descriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal|bottom"
-        android:text="Guess the location"
-        android:layout_marginBottom="20dp"/>
-
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:text="Warren Towers is one of the three Boston University dormitories traditionally intended for underclassmen, the others being The Towers and West Campus. The building is located at central campus, next to the College of Communication (COM) and across from the College of Arts and Sciences (CAS). Housing approximately 1800 students, it is the second-largest non-military dormitory in the country."
+        android:textSize="16sp"/>
 </FrameLayout>

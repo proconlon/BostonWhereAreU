@@ -2,24 +2,34 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:padding="16dp">
 
-    <ImageView
-        android:id="@+id/imageViewKenmore"
+    <TextView
+        android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="center_horizontal|top"
+        android:text="Kenmore Square"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingTop="16dp"/>
+
+    <ImageView
+        android:id="@+id/casImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
         android:src="@drawable/kenmore" />
 
-    <Button
-        android:id="@+id/buttonNavigate"
+    <TextView
+        android:id="@+id/descriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal|bottom"
-        android:text="Guess the location"
-        android:layout_marginBottom="20dp"/>
-
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:text="Kenmore Square is a square in the Fenway–Kenmore neighborhood of Boston, Massachusetts. It is formed by the crossing of Beacon Street,Commonwealth Avenue, and Brookline Avenue. It is the eastern terminus of U.S. Route 20, the longest U.S. Highway. The Citgo sign is a prominent landmark in Kenmore Square, and Fenway Park is just to the south. Kenmore station is located under the square, with a surface bus terminal inside the square."
+        android:textSize="16sp"/>
 </FrameLayout>
 
 
