@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".map_viewer">
+    android:layout_height="match_parent">
 
     <!-- TouchImageView for displaying the image -->
+
+    <!-- TextView to display touch coordinates for debugging -->
     <com.ortiz.touchview.TouchImageView
         android:id="@+id/img_map"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/campus_map_temporary" />
+        android:src="@drawable/campus_map" />
 
-    <!-- TextView to display touch coordinates -->
     <TextView
         android:id="@+id/coordinates_text_view"
         android:layout_width="wrap_content"
@@ -24,5 +24,56 @@
         android:padding="8dp"
         android:textColor="#FF0000"
         android:textSize="18sp" />
+
+    <!-- Confirm button -->
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="238dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:text="Confirm"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+    <!-- Map overlay for circle and line -->
+    <com.example.bostonwhereareu.MapOverlay
+        android:id="@+id/map_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Map Marker -->
+    <ImageView
+        android:id="@+id/map_marker"
+        android:layout_width="103dp"
+        android:layout_height="67dp"
+        android:src="@drawable/map_marker" />
+
+    <!-- container for next and info buttons -->
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="238dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        tools:visibility="visible">
+
+        <!-- Next button -->
+        <Button
+            android:id="@+id/buttonNext"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Next" />
+
+        <!-- Show more info about location button -->
+        <Button
+            android:id="@+id/buttonMoreInfo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="More Info" />
+    </LinearLayout>
+
 
 </FrameLayout>
