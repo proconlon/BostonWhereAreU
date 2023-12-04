@@ -30,7 +30,7 @@ public class GameState {
         locationList.add(new LocationData(2432, 1035, "Myles"));
         locationList.add(new LocationData(2051, 1044, "Questrom"));
         locationList.add(new LocationData(1748, 1077, "Warren"));
-        locationList.add(new LocationData(757, 868, "West Campus"));
+        locationList.add(new LocationData(557, 738, "West Campus"));
 
         Collections.shuffle(locationList, new Random());
     }
