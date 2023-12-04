@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <!-- HomeFragment -->
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.bostonwhereareu.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+
+        <!-- Action to navigate to MapViewerFragment -->
+        <action
+            android:id="@+id/action_navigation_home_to_map_viewer"
+            app:destination="@id/map_viewer" />
+
+        <!-- Action to navigate to RandomImageFragment -->
+        <action
+            android:id="@+id/action_navigation_home_to_rand_img"
+            app:destination="@id/rand_img" />
+    </fragment>
+
+    <!-- Make sure MapViewerFragment and RandomImageFragment are defined in this file -->
+
+
+    <!-- DashboardFragment -->
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.bostonwhereareu.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <!-- NotificationsFragment -->
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.bostonwhereareu.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <!-- MapViewerFragment -->
+    <fragment
+        android:id="@+id/map_viewer"
+        android:name="com.example.bostonwhereareu.MapViewerFragment"
+        android:label="fragment_map_viewer"
+        tools:layout="@layout/fragment_map_viewer">
+        <!-- Action to navigate to RandomImage Fragment -->
+        <action
+            android:id="@+id/action_mapViewerFragment_to_randomImageFragment"
+            app:destination="@id/rand_img" />
+        <!-- Action to navigate to GameOver Fragment -->
+        <action
+            android:id="@+id/action_mapViewerFragment_to_gameOverFragment"
+            app:destination="@id/game_over" />
+        <!-- Action to navigate to LocationInfo Fragment -->
+        <action
+            android:id="@+id/action_mapViewerFragment_to_locationInfoFragment"
+            app:destination="@id/location_cas" />
+    </fragment>
+
+    <!-- RandomImage Fragment -->
+    <fragment
+        android:id="@+id/rand_img"
+        android:name="com.example.bostonwhereareu.RandomImage"
+        android:label="random_img"
+        tools:layout="@layout/random_img">
+        <!-- Action to navigate to MapViewerFragment -->
+        <action
+            android:id="@+id/action_rand_img_to_map_viewer"
+            app:destination="@id/map_viewer" />
+    </fragment>
+
+    <!-- GameOver Fragment -->
+    <fragment
+        android:id="@+id/game_over"
+        android:name="com.example.bostonwhereareu.GameOverFragment"
+        android:label="Game Over"
+        tools:layout="@layout/fragment_game_over" >
+        <action
+            android:id="@+id/action_game_over_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+
+    <!-- LocationInfo Fragment -->
+    <fragment
+        android:id="@+id/location_cas"
+        android:name="com.example.bostonwhereareu.LocationInfo"
+        android:label="fragment_location_info"
+        tools:layout="@layout/location_cas"/> <!-- NEED TO BE FIXED -->
+        <!-- Actions related to LocationInfo -->
+
+
+
+    <!-- Define other fragments (GameOverFragment, LocationInfo) here along with their actions if needed -->
+
+
+
+</navigation>
