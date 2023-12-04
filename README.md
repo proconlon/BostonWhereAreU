@@ -1,7 +1,10 @@
 # Overview
-*Boston Where Are U* is a dynamic Android game designed for Boston University (BU) enthusiasts and Terriers. It challenges players to identify BU landmarks on a map using images. The player guesses the location on a BU map and the app should calculate a score based on the distance between the guessed location and the actual location of the image. This game will also include a leaderboard of top BU guessers.
+*Boston Where Are U* is an Android game designed for Boston University students and Terriers. It challenges players to identify BU landmarks on a map using images. The player guesses the location on a BU map and the app should calculate a score based on the distance between the guessed location and the actual location of the image. This game will also include a leaderboard of top BU guessers.
 
-This game is ideal for students, alumni, and visitors, offering an entertaining way to learn about the campus. Helps players familiarize themselves with BU's campus through engaging gameplay. Unlike general map-based games, it specifically targets the BU campus, offering a personalized experience.
+This game is ideal for students, alumni, and visitors, offering an entertaining way to learn about the campus. It is supposed to help players familiarize themselves with BU's campus through a game. Unlike general map-based games, it specifically targets the BU campus, offering a personalized experience with inside knowledge about the BU campus.
+
+
+[Demo Video](https://youtu.be/NMoBxZrTZsc)
 
 # Functionality
 * Full pan and zoom of a map using TouchImageView class as well as a custom coordinate system for adding locations.
