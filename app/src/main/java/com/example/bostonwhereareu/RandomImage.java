@@ -70,11 +70,15 @@ public class RandomImage extends Fragment {
 
         //Create Timer
         countTime = view.findViewById(R.id.count_time);
-        countDown = new CountDownTimer(10000, 1000) {
+        countDown = new CountDownTimer(10000, 10) {
             @Override
             public void onTick(long millisUntilFinished) {
                 // Update the countdown TextView every second
-                countTime.setText(String.valueOf(millisUntilFinished / 1000));
+                long seconds = millisUntilFinished/1000;
+                long millis = millisUntilFinished%1000;
+
+                String Time = String.format("%d.%02d", seconds, millis / 10);
+                countTime.setText(Time);
             }
 
             @Override

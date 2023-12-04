@@ -8,6 +8,8 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
+import androidx.core.content.ContextCompat;
+
 public class MapOverlay extends View {
     private Paint paint; // paint object for drawing lines and circles
     public boolean isMarkerConfirmed = false;
@@ -78,8 +80,11 @@ public class MapOverlay extends View {
             canvas.drawLine(viewMarkerX, viewMarkerY, viewTargetX, viewTargetY, paint);
 
             // display score
-            paint.setTextSize(50f);
-            canvas.drawText("Score: " + score, 50f, 50f, paint);
+            paint.setTextSize(65f);
+            int color = ContextCompat.getColor(getContext(), R.color.black);
+            paint.setColor(color);
+            paint.setStrokeWidth(10);
+            canvas.drawText("Score: " + score, 400f, 1690f, paint);
 
             // display distance in feet or other things
 

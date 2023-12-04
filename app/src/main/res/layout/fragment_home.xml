@@ -4,39 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
-
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".ui.home.HomeFragment"
+    tools:ignore="ExtraText">
 
     <Button
         android:id="@+id/MAPS_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="158dp"
-        android:layout_marginTop="113dp"
+        android:layout_width="133dp"
+        android:layout_height="69dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="140dp"
         android:text="Maps page"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rand_img" />
 
     <Button
         android:id="@+id/rand_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="172dp"
-        android:layout_marginTop="256dp"
+        android:layout_width="133dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="181dp"
         android:text="Play"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/MAPS_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rhett" />
+
+    <ImageView
+        android:id="@+id/rhett"
+        android:layout_width="499dp"
+        android:layout_height="398dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="61dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="82dp"
+        android:src="@drawable/rhett"
+        app:layout_constraintBottom_toTopOf="@+id/rand_img"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

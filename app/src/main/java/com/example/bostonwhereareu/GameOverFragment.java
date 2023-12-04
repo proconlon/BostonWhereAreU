@@ -5,18 +5,32 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GameOverFragment extends Fragment {
 
     public GameOverFragment() {
         // Required empty public constructor
     }
+    public static List<String> getUsernames() {
+        return usernames;
+    }
+    private EditText usernameInput;
+    private Button submitUsername;
+    private static List<String> usernames = new ArrayList<>();
+    public static String username;
+    public static String tot_score;
 
     @Nullable
     @Override
@@ -39,6 +53,22 @@ public class GameOverFragment extends Fragment {
                 gameState.getVisitedLocations()
         );
         locationsListView.setAdapter(adapter);
+
+        //Ask for username to put on leaderboard
+        usernameInput = view.findViewById(R.id.usernameInput);
+        submitUsername = view.findViewById(R.id.submitUsername);
+
+        submitUsername.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tot_score = String.valueOf(gameState.getTotalScore());
+                username = usernameInput.getText().toString();
+                usernames.add(username);
+                NavHostFragment.findNavController(GameOverFragment.this)
+                        .navigate(R.id.action_game_over_to_navigation_home);
+            }
+        });
+
 
         return view;
     }

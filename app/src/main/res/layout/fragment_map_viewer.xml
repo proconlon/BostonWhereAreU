@@ -22,7 +22,7 @@
         android:layout_gravity="top|center_horizontal"
         android:background="#50FFFFFF"
         android:padding="8dp"
-        android:textColor="#FF0000"
+        android:textColor="@color/black"
         android:textSize="18sp" />
 
     <!-- Confirm button -->

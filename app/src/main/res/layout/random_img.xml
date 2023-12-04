@@ -9,18 +9,20 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="372dp"
-        android:layout_height="0dp"
-
+        android:layout_width="363dp"
+        android:layout_height="298dp"
         android:layout_marginTop="76dp"
         android:layout_marginBottom="168dp"
+        android:background="@drawable/border"
         app:layout_constraintBottom_toTopOf="@+id/count_time"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="centerCrop"/>
 
     <!-- This is the button to go to the map viewer -->
+
     <Button
         android:id="@+id/action_rand_img_to_map_viewer"
         android:layout_width="wrap_content"
@@ -29,17 +31,17 @@
         android:text="Guess Location"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/count_time"
-        android:layout_width="38dp"
-        android:layout_height="42dp"
+        android:layout_width="103dp"
+        android:layout_height="71dp"
         android:layout_gravity="center"
         android:layout_marginBottom="75dp"
-        android:text="10"
-        android:textSize="24sp"
+        android:text="9.99"
+        android:textColor="@color/black"
+        android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
