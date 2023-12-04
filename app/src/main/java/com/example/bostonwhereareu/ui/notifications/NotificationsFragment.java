@@ -30,7 +30,7 @@ public class NotificationsFragment extends Fragment {
         View root = binding.getRoot();
 
         final TextView textView = binding.textNotifications;
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        //notificationsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
         // reset listener
         Button resetGameButton = binding.btnResetGame; // Make sure the ID matches your layout

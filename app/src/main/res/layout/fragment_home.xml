@@ -8,28 +8,14 @@
     tools:ignore="ExtraText">
 
     <Button
-        android:id="@+id/MAPS_button"
-        android:layout_width="133dp"
-        android:layout_height="69dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="140dp"
-        android:text="Maps page"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/rand_img" />
-
-    <Button
         android:id="@+id/rand_img"
         android:layout_width="133dp"
         android:layout_height="69dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="181dp"
         android:text="Play"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/MAPS_button"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rhett" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/rhett"

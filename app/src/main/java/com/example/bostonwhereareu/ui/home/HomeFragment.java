@@ -36,9 +36,6 @@ public class HomeFragment extends Fragment {
         // final TextView textView = binding.textHome;
         //homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
-        // Button to navigate to MapsFragment
-        Button button = binding.MAPSButton; // Ensure this ID matches your button ID in fragment_home.xml
-        button.setOnClickListener(v -> navigateToMapsFragment());
 
         Button button1 = binding.randImg;
         button1.setOnClickListener(v -> navigateToRandImg());

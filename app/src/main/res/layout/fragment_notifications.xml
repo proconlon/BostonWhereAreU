@@ -8,26 +8,27 @@
 
     <TextView
         android:id="@+id/text_notifications"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="300dp"
+        android:text="Naeel Quasem - nquasem@bu.edu\nJames Conlon - conlon@bu.edu\nPatthaphol (Pat) - Chotikakovit patc@bu.edu\nFengxinDai - fengx@bu.edu"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_reset_game"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
 
     <Button
         android:id="@+id/btn_reset_game"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="reset game"
         android:layout_marginTop="20dp"
-        android:layout_gravity="center"/>
-
+        android:text="reset game"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_notifications" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

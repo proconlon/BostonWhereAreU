@@ -18,6 +18,7 @@ import com.example.bostonwhereareu.R;
 import com.example.bostonwhereareu.databinding.FragmentDashboardBinding;
 
 import java.util.Collections;
+import java.util.List;
 
 public class DashboardFragment extends Fragment {
 
@@ -37,26 +38,28 @@ public class DashboardFragment extends Fragment {
 
         //get username from game over fragment
         ListView usersList = view.findViewById(R.id.usersList);
+        List<String> usernames = GameOverFragment.getUsernames();
+        if (usernames == null || usernames.isEmpty()) {
+            usernames = Collections.singletonList("No BU players yet");
+        }
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 getContext(),
                 android.R.layout.simple_list_item_1,
-                GameOverFragment.getUsernames()
-
+                usernames
         );
-
         usersList.setAdapter(adapter);
 
         ListView scoresList = view.findViewById(R.id.scoresList);
+        String totalScore = GameOverFragment.tot_score;
+        if (totalScore == null || totalScore.isEmpty()) {
+            totalScore = "No scores yet";
+        }
         ArrayAdapter<String> adapter2 = new ArrayAdapter<>(
                 getContext(),
                 android.R.layout.simple_list_item_1,
-                Collections.singletonList(GameOverFragment.tot_score)
-
+                Collections.singletonList(totalScore)
         );
-
         scoresList.setAdapter(adapter2);
-
-
 
         return view;
     }
